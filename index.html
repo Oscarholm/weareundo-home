@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Are Undo — Coming Soon</title>
+    <link rel="stylesheet"
+        href="https://use.typekit.net/af/9b05f3/000000000000000077359c25/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3"
+        as="font" crossorigin>
+    <style>
+        @font-face {
+            font-family: 'Futura PT';
+            src: url('https://use.typekit.net/af/9b05f3/000000000000000077359c25/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Futura PT';
+            src: url('https://use.typekit.net/af/c4c302/000000000000000077359c1f/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1ebe5;
+            color: #3c3c3c;
+            font-family: 'Futura PT', 'Futura', 'Century Gothic', 'AppleGothic', sans-serif;
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .storefront {
+            width: 90vw;
+            max-width: 1600px;
+            max-height: calc(100vh - 8rem);
+            max-height: calc(100dvh - 8rem);
+            object-fit: contain;
+            flex-shrink: 1;
+        }
+
+        .coming-soon {
+            font-size: clamp(0.9rem, 2vw, 1.8rem);
+            font-weight: 300;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: #3c3c3c;
+            text-align: center;
+            margin-top: -1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 1.2rem;
+            padding: 0.5em 1.8em;
+            font-family: inherit;
+            font-size: clamp(0.65rem, 1.2vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #0000ff;
+            border: none;
+            transition: background-color 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .contact-btn:hover {
+            background-color: #0000cc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="storefront" src="WAU26_STOREFRONT SYSTEM_Facades Outline.svg" alt="We Are Undo — Storefront" />
+        <p class="coming-soon">Coming Soon</p>
+        <a class="contact-btn" href="mailto:gustav@weareundo.com">Contact</a>
+    </div>
+</body>
+
+</html>
