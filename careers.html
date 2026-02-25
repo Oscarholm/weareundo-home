@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Are Undo — Careers</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+        @font-face {
+            font-family: 'Futura PT';
+            src: url('https://use.typekit.net/af/9b05f3/000000000000000077359c25/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Futura PT';
+            src: url('https://use.typekit.net/af/c4c302/000000000000000077359c1f/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1ebe5;
+            color: #3c3c3c;
+            font-family: 'Futura PT', 'Futura', 'Century Gothic', 'AppleGothic', sans-serif;
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            right: max(2rem, calc((100vw - 1300px) / 2));
+            padding: 1.5rem 0;
+            display: flex;
+            gap: 2rem;
+            z-index: 10;
+        }
+
+        .nav-link {
+            font-family: inherit;
+            font-size: clamp(0.75rem, 1.2vw, 1rem);
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #3c3c3c;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.current {
+            color: #0000ff;
+        }
+
+        .logo {
+            position: fixed;
+            top: 0;
+            left: max(2rem, calc((100vw - 1300px) / 2));
+            padding: 1.5rem 0;
+            z-index: 10;
+        }
+
+        .logo img {
+            height: 2.8rem;
+            width: auto;
+            display: block;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 4rem 3rem;
+        }
+
+        .layout {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 960px;
+            height: 100%;
+        }
+
+        /* ── Job list ── */
+
+        .job-list {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            width: 260px;
+        }
+
+        .job-item {
+            padding: 1rem 1.5rem 1rem 1rem;
+            border-top: 1px solid rgba(60, 60, 60, 0.12);
+            border-left: 2px solid transparent;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .job-item:last-child {
+            border-bottom: 1px solid rgba(60, 60, 60, 0.12);
+        }
+
+        .job-item.active {
+            border-left-color: #0000ff;
+        }
+
+        .job-label {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #3c3c3c;
+            transition: color 0.2s ease;
+        }
+
+        .job-item:hover .job-label,
+        .job-item.active .job-label {
+            color: #0000ff;
+        }
+
+        /* ── Divider ── */
+
+        .divider {
+            width: 1px;
+            align-self: stretch;
+            background: rgba(60, 60, 60, 0.15);
+            margin: 0 5rem;
+            flex-shrink: 0;
+        }
+
+        /* ── Job detail ── */
+
+        .job-detail {
+            flex: 1;
+            position: relative;
+            height: 100%;
+        }
+
+        .job-panel {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .job-panel.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .detail-title {
+            font-size: clamp(1rem, 2vw, 1.6rem);
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #3c3c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-meta {
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #0000ff;
+            margin-bottom: 1.8rem;
+        }
+
+        .detail-body {
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.9;
+            color: #3c3c3c;
+            max-width: 440px;
+            margin-bottom: 2.2rem;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            padding: 0.5em 1.8em;
+            font-family: inherit;
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #0000ff;
+            transition: background-color 0.2s ease;
+        }
+
+        .apply-btn:hover {
+            background-color: #0000cc;
+        }
+
+        /* ── Back button (mobile only) ── */
+
+        .back-btn {
+            display: none;
+        }
+
+        /* ── Mobile ── */
+
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                min-height: 100dvh;
+                overflow-y: auto;
+            }
+
+            .nav {
+                right: 1.5rem;
+            }
+
+            .main {
+                padding: 5rem 1.5rem 3rem;
+                align-items: flex-start;
+            }
+
+            .layout {
+                flex-direction: column;
+                height: auto;
+                gap: 0;
+            }
+
+            .job-list {
+                width: 100%;
+            }
+
+            .divider {
+                display: none;
+            }
+
+            .job-detail {
+                display: none;
+                width: 100%;
+                height: auto;
+            }
+
+            .job-panel {
+                position: static;
+                transform: none;
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .job-panel:not(.active) {
+                display: none;
+            }
+
+            .back-btn {
+                display: inline-block;
+                background: none;
+                border: none;
+                font-family: inherit;
+                font-size: 0.65rem;
+                font-weight: 400;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: #3c3c3c;
+                cursor: pointer;
+                padding: 0;
+                margin-bottom: 2.5rem;
+                transition: color 0.2s ease;
+            }
+
+            .back-btn:hover {
+                color: #0000ff;
+            }
+
+            .logo img {
+                height: 2rem;
+            }
+
+            body.showing-detail .job-list {
+                display: none;
+            }
+
+            body.showing-detail .job-detail {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="logo" href="index.html">
+        <img src="logo.svg" alt="We Are Undo" />
+    </a>
+    <nav class="nav">
+        <a class="nav-link current" href="careers.html">Careers</a>
+        <a class="nav-link" href="mailto:gustav@weareundo.com">Contact</a>
+    </nav>
+
+    <main class="main">
+        <div class="layout">
+
+            <div class="job-list">
+                <div class="job-item active" data-index="0">
+                    <span class="job-label">Regional Manager — UK</span>
+                </div>
+                <div class="job-item" data-index="1">
+                    <span class="job-label">Regional Manager — Germany</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="job-detail">
+                <button class="back-btn" id="backBtn">← All Roles</button>
+
+                <div class="job-panel active" data-index="0">
+                    <h2 class="detail-title">Regional Manager — UK</h2>
+                    <p class="detail-meta">Full-time &middot; London</p>
+                    <div class="detail-body">
+                        <p>We Are Undo has built market leadership across the Netherlands and Nordics and is now expanding into the UK. As our first hire in Britain, you will be the architect of that rollout — owning site selection, clinic fit-outs, team recruitment, and day-to-day operations from the ground up.</p>
+                        <br>
+                        <p>You will oversee the opening of 6+ London clinics throughout 2026 and deliver care to over 1,000 patients in the process. The right candidate has scaled multi-site businesses in retail, healthcare, or hospitality, is equally comfortable on a building site and in a boardroom, and thrives in the structured ambiguity of a fast-growing startup.</p>
+                    </div>
+                    <a class="apply-btn" href="https://www.linkedin.com/jobs/view/4374892135/" target="_blank" rel="noopener">Apply on LinkedIn</a>
+                </div>
+
+                <div class="job-panel" data-index="1">
+                    <h2 class="detail-title">Regional Manager — Germany</h2>
+                    <p class="detail-meta">Full-time &middot; Hamburg / Cologne / Berlin</p>
+                    <div class="detail-body">
+                        <p>Germany is the cornerstone of our European expansion and this role sits at the centre of it. You will operate as both Chief of Staff to the CEO and Regional Manager on the ground — bridging strategy and execution as we integrate existing clinics and open 4+ new locations across Hamburg, Cologne, and Berlin in 2026.</p>
+                        <br>
+                        <p>We are looking for someone with native or bilingual German fluency, a strong command of English, and ideally experience in the German aesthetic or medical market. You can hold a high-level conversation in the morning and manage a clinic buildout in the afternoon.</p>
+                    </div>
+                    <a class="apply-btn" href="https://www.linkedin.com/jobs/view/4374891658/" target="_blank" rel="noopener">Apply on LinkedIn</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const items = document.querySelectorAll('.job-item');
+        const panels = document.querySelectorAll('.job-panel');
+        const backBtn = document.getElementById('backBtn');
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                items.forEach(i => i.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                item.classList.add('active');
+                document.querySelector(`.job-panel[data-index="${item.dataset.index}"]`).classList.add('active');
+                if (window.innerWidth <= 768) {
+                    document.body.classList.add('showing-detail');
+                    window.scrollTo(0, 0);
+                }
+            });
+        });
+
+        backBtn.addEventListener('click', () => {
+            document.body.classList.remove('showing-detail');
+        });
+    </script>
+</body>
+
+</html>
