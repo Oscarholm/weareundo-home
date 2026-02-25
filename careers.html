@@ -66,18 +66,24 @@
             color: #0000ff;
         }
 
-        .logo {
+        .home-link {
             position: fixed;
             top: 0;
             left: max(2rem, calc((100vw - 1300px) / 2));
             padding: 1.5rem 0;
+            font-family: inherit;
+            font-size: clamp(0.75rem, 1.2vw, 1rem);
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #3c3c3c;
+            transition: color 0.2s ease;
             z-index: 10;
         }
 
-        .logo img {
-            height: 2.8rem;
-            width: auto;
-            display: block;
+        .home-link:hover {
+            color: #0000ff;
         }
 
         .main {
@@ -289,11 +295,7 @@
                 color: #0000ff;
             }
 
-            .logo img {
-                height: 2rem;
-            }
-
-            body.showing-detail .job-list {
+body.showing-detail .job-list {
                 display: none;
             }
 
@@ -305,10 +307,8 @@
 </head>
 
 <body>
-    <a class="logo" href="index.html">
-        <img src="logo.svg" alt="We Are Undo" />
-    </a>
-    <nav class="nav">
+    <a class="home-link" href="index.html">← Home</a>
+<nav class="nav">
         <a class="nav-link current" href="careers.html">Careers</a>
         <a class="nav-link" href="mailto:gustav@weareundo.com">Contact</a>
     </nav>
