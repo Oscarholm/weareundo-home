@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We Are Undo — Finance Operations</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #EDEBE4;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+  }
+
+  .page {
+    padding: 2.5rem 2rem 4rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .brand { display: flex; align-items: center; gap: 10px; }
+
+  .brand-pill {
+    background: #2020FF;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .header-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    letter-spacing: 0.02em;
+  }
+
+  .header-hint {
+    font-size: 13px;
+    color: rgba(0,0,0,0.25);
+  }
+
+  .domains {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .domain-card {
+    background: #F5F3EE;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+
+  .domain-card:hover { border-color: rgba(0,0,0,0.18); }
+  .domain-card.open { border-color: #2020FF; }
+
+  .domain-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    user-select: none;
+  }
+
+  .domain-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    background: #2020FF;
+    border-radius: 3px;
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .domain-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #111;
+    flex: 1;
+    letter-spacing: 0.01em;
+  }
+
+  .proc-count {
+    font-size: 12px;
+    color: rgba(0,0,0,0.25);
+    flex-shrink: 0;
+  }
+
+  .chevron {
+    width: 16px;
+    height: 16px;
+    color: #2020FF;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    opacity: 0.45;
+  }
+
+  .domain-card.open .chevron {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+
+  .domain-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .domain-card.open .domain-body { max-height: 900px; }
+
+  .body-inner {
+    padding: 0 20px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .state-block {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+
+  .state-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 5px;
+  }
+
+  .state-label.start { color: rgba(0,0,0,0.3); }
+  .state-label.target { color: #2020FF; }
+
+  .state-val {
+    font-size: 13px;
+    color: #222;
+    line-height: 1.55;
+  }
+
+  .processes-block { grid-column: 1 / -1; }
+
+  .proc-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(0,0,0,0.3);
+    margin-bottom: 8px;
+  }
+
+  .proc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 5px;
+  }
+
+  .proc-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 5px;
+    font-size: 13px;
+    color: #222;
+  }
+
+  .proc-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #2020FF;
+    opacity: 0.35;
+    flex-shrink: 0;
+  }
+
+  .section-divider {
+    margin-top: 3rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 2rem;
+  }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 1.75rem;
+  }
+
+  .sys-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .sys-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sys-node {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .sys-node.core {
+    background: #2020FF;
+    border-color: #2020FF;
+  }
+
+  .sys-node-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 3px;
+  }
+
+  .sys-node.core .sys-node-name { color: #fff; }
+
+  .sys-node-desc {
+    font-size: 12px;
+    color: rgba(0,0,0,0.45);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .sys-node.core .sys-node-desc { color: rgba(255,255,255,0.65); }
+
+  .domain-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .domain-tag {
+    font-size: 10px;
+    font-weight: 500;
+    background: rgba(32,32,255,0.07);
+    color: #2020FF;
+    border-radius: 3px;
+    padding: 2px 6px;
+  }
+
+  .sys-node.core .domain-tag {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+
+  .map-legend {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 1.25rem;
+    font-size: 11px;
+    color: rgba(0,0,0,0.4);
+  }
+
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+
+  .legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+
+  .legend-swatch.core { background: #2020FF; }
+  .legend-swatch.specialist { background: #fff; border: 1px solid rgba(0,0,0,0.15); }
+
+  .footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(0,0,0,0.18);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 600px) {
+    .body-inner { grid-template-columns: 1fr; }
+    .processes-block { grid-column: 1; }
+    .sys-grid { grid-template-columns: 1fr; }
+    .header { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="brand">
+      <div class="brand-pill">We Are Undo</div>
+      <span class="header-title">Finance operations</span>
+    </div>
+    <span class="header-hint">Click any domain to expand</span>
+  </div>
+
+  <div class="domains" id="domains"></div>
+
+  <div class="section-divider">
+    <div class="section-title">Target systems map</div>
+    <div class="sys-grid">
+
+      <div class="sys-col">
+        <div class="sys-node">
+          <div class="sys-node-name">Stripe</div>
+          <div class="sys-node-desc">Payments &amp; revenue recognition</div>
+          <div class="domain-tags"><span class="domain-tag">1 &middot; Order to cash</span></div>
+        </div>
+        <div class="sys-node">
+          <div class="sys-node-name">Personio</div>
+          <div class="sys-node-desc">HR platform &amp; payroll</div>
+          <div class="domain-tags"><span class="domain-tag">3 &middot; Payroll &amp; HR finance</span></div>
+        </div>
+        <div class="sys-node">
+          <div class="sys-node-name">Revolut</div>
+          <div class="sys-node-desc">Banking, AP &amp; expense cards</div>
+          <div class="domain-tags">
+            <span class="domain-tag">2 &middot; Purchase to pay</span>
+            <span class="domain-tag">6 &middot; Treasury</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sys-col">
+        <div class="sys-node core">
+          <div class="sys-node-name">Oracle NetSuite</div>
+          <div class="sys-node-desc">ERP &amp; group chart of accounts</div>
+          <div class="domain-tags">
+            <span class="domain-tag">2 &middot; Purchase to pay</span>
+            <span class="domain-tag">4 &middot; Record to report</span>
+            <span class="domain-tag">9 &middot; Systems &amp; governance</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sys-col">
+        <div class="sys-node">
+          <div class="sys-node-name">Beam</div>
+          <div class="sys-node-desc">Practice management &amp; booking</div>
+          <div class="domain-tags"><span class="domain-tag">1 &middot; Order to cash</span></div>
+        </div>
+        <div class="sys-node">
+          <div class="sys-node-name">Numbery + Excel</div>
+          <div class="sys-node-desc">Consolidated reporting &amp; FP&amp;A</div>
+          <div class="domain-tags"><span class="domain-tag">7 &middot; FP&amp;A &amp; reporting</span></div>
+        </div>
+        <div class="sys-node">
+          <div class="sys-node-name">Local advisers</div>
+          <div class="sys-node-desc">Statutory, tax &amp; audit by entity</div>
+          <div class="domain-tags"><span class="domain-tag">5 &middot; Tax &amp; statutory</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="map-legend">
+      <div class="legend-item"><div class="legend-swatch core"></div><span>Core</span></div>
+      <div class="legend-item"><div class="legend-swatch specialist"></div><span>Specialist system</span></div>
+    </div>
+  </div>
+
+  <p class="footer">We Are Undo &middot; Finance &amp; Operations &middot; Confidential</p>
+</div>
+
+<script>
+const data = [
+  {
+    num: 1, title: "Order to cash",
+    start: "Fragmented, no group policy",
+    target: "Stripe, IFRS-compliant revenue recognition",
+    processes: ["Revenue recognition","Payment processing","Consumer financing","Refunds & adjustments","Accounts receivable"]
+  },
+  {
+    num: 2, title: "Purchase to pay",
+    start: "Fragmented, no group policy",
+    target: "Revolut",
+    processes: ["Accounts payable","Procurement & POs","Expense management","Corporate cards","Vendor management"]
+  },
+  {
+    num: 3, title: "Payroll & HR finance",
+    start: "Fragmented, with local suppliers for compliance",
+    target: "Personio, with local suppliers for statutory/compliance",
+    processes: ["Payroll processing","Commission & variable pay","Payroll tax","Pension & benefits"]
+  },
+  {
+    num: 4, title: "Record to report",
+    start: "Fragmented",
+    target: "NetSuite + group CoA incl. clinic dimensions",
+    processes: ["Month-end close","Bank reconciliation","IC recon & eliminations","Deferred revenue","Fixed asset management","Inventory & consumables","Group consolidation"]
+  },
+  {
+    num: 5, title: "Tax & statutory compliance",
+    start: "Local advisers, no group calendar",
+    target: "Local advisers, coordinated by in-house accountant · Group auditor · Group transfer pricing policy",
+    processes: ["VAT compliance","Corporate income tax","Transfer pricing","Statutory accounts","Audit management"]
+  },
+  {
+    num: 6, title: "Treasury & cash management",
+    start: "Ad hoc, dispersed",
+    target: "Revolut",
+    processes: ["Cash flow forecasting","FX exposure management","Debt & facility management","Banking & accounts"]
+  },
+  {
+    num: 7, title: "FP&A & reporting",
+    start: "Manual consolidated, Excel · No group calendar",
+    target: "NetSuite, Numbery, Excel",
+    processes: ["Monthly board pack","Annual budget & reforecast","KPI tracking","Variance analysis","Long-range planning"]
+  },
+  {
+    num: 8, title: "M&A & corporate finance",
+    start: "Managed by Factory Capital",
+    target: "D+30/60/90 integration playbook · RPT register",
+    processes: ["Acquisition diligence","Post-acq integration","Cap table","Related-party transactions"]
+  },
+  {
+    num: 9, title: "Systems, controls & governance",
+    start: "Subject to local bookkeepers",
+    target: "System: NetSuite + group CoA · Team: CFO, Accountant, Controller + Agents",
+    processes: ["ERP & chart of accounts","Internal controls","Document management","Finance team & hiring"]
+  }
+];
+
+const container = document.getElementById('domains');
+
+data.forEach(d => {
+  const card = document.createElement('div');
+  card.className = 'domain-card';
+  card.innerHTML = `
+    <div class="domain-header">
+      <div class="domain-num">${d.num}</div>
+      <div class="domain-title">${d.title}</div>
+      <span class="proc-count">${d.processes.length} processes</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <polyline points="4,6 8,10 12,6"/>
+      </svg>
+    </div>
+    <div class="domain-body">
+      <div class="body-inner">
+        <div class="state-block">
+          <div class="state-label start">Starting point</div>
+          <div class="state-val">${d.start}</div>
+        </div>
+        <div class="state-block">
+          <div class="state-label target">Destination</div>
+          <div class="state-val">${d.target}</div>
+        </div>
+        <div class="processes-block">
+          <div class="proc-label">Processes</div>
+          <div class="proc-grid">
+            ${d.processes.map(p => `<div class="proc-item"><div class="proc-dot"></div>${p}</div>`).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  card.querySelector('.domain-header').addEventListener('click', () => {
+    card.classList.toggle('open');
+  });
+  container.appendChild(card);
+});
+</script>
+</body>
+</html>
