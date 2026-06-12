@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Euraser Holdings Ltd — Board Materials</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBEFD2;
+    --ink:#17120D;
+    --blue:#2020FF;
+    --corn:#8DABE4;
+    --orange:#FFB266;
+    --brown:#3B2C20;
+    --cream:#FFF6E3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{background:#2a241d;}
+  body{font-family:'Montserrat',sans-serif;color:var(--ink);}
+
+  .page{
+    width:1280px;height:720px;
+    background:var(--paper);
+    margin:28px auto;
+    position:relative;overflow:hidden;
+    display:flex;flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.45);
+  }
+
+  .hd{display:flex;align-items:flex-end;justify-content:space-between;padding:26px 44px 10px 44px;border-bottom:2.5px solid var(--ink);flex:0 0 auto;}
+  .hd .sec{font-family:'Archivo Black';font-size:17px;border-bottom:3px solid var(--ink);padding-bottom:2px;}
+  .hd .meta{display:flex;gap:26px;font-size:9.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#4a4036;padding-bottom:4px;}
+  .ft{flex:0 0 auto;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:38px;font-size:10.5px;}
+  .ft .serif{font-family:'EB Garamond',serif;font-style:italic;font-size:13px;}
+  .ft .mid{font-weight:600;letter-spacing:1.6px;text-transform:uppercase;font-size:9.5px;}
+  .body{flex:1 1 auto;padding:32px 44px 22px 44px;overflow:hidden;display:flex;flex-direction:column;}
+
+  h2.title{font-family:'Archivo Black';font-size:42px;line-height:1.05;margin-bottom:8px;}
+  .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:17px;color:#3d342a;margin-bottom:26px;line-height:1.4;max-width:760px;}
+
+  .tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:4px 10px;border-radius:2px;}
+  .tag.res{background:var(--blue);color:#fff;}
+  .tag.info{background:var(--brown);color:var(--paper);}
+  .tag.rec{background:var(--orange);color:var(--ink);}
+
+  .meetings{display:flex;flex-direction:column;gap:12px;}
+
+  .meeting{
+    display:flex;align-items:stretch;gap:0;
+    background:var(--cream);border:1.5px solid var(--ink);
+    text-decoration:none;color:inherit;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .meeting:hover{transform:translateY(-1px);box-shadow:0 6px 0 -2px var(--blue);}
+  .meeting:hover .meeting-go{background:var(--blue);color:#fff;}
+
+  .meeting-date{
+    background:var(--ink);color:var(--paper);
+    padding:18px 22px;display:flex;flex-direction:column;justify-content:center;
+    min-width:148px;
+  }
+  .meeting-date .d-day{font-family:'Archivo Black';font-size:34px;line-height:1;}
+  .meeting-date .d-mon{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;margin-top:6px;color:#d8c19a;}
+
+  .meeting-body{flex:1 1 auto;padding:16px 22px;display:flex;flex-direction:column;justify-content:center;gap:6px;}
+  .meeting-title{font-family:'Archivo Black';font-size:18px;line-height:1.15;}
+  .meeting-summary{font-size:12px;line-height:1.5;color:#3d342a;max-width:720px;}
+  .meeting-tags{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;}
+
+  .meeting-go{
+    display:flex;align-items:center;justify-content:center;
+    padding:0 28px;
+    font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;
+    border-left:1.5px solid var(--ink);
+    white-space:nowrap;
+    transition:background-color .12s ease, color .12s ease;
+  }
+
+  .between{
+    margin-top:auto;
+    border:1.5px dashed #8a7a64;padding:9px 16px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .between .lbl{font-size:9px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:#8a7a64;white-space:nowrap;}
+  .between .txt{font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:#5a4f43;}
+
+  @media print{
+    html{background:#fff;}
+    .page{margin:0;box-shadow:none;}
+    @page{size:1280px 720px;margin:0;}
+  }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="hd">
+    <span class="sec">Board Materials</span>
+    <div class="meta">
+      <span>Euraser Holdings Ltd</span>
+      <span>Index</span>
+      <span>Strictly Confidential</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <h2 class="title">Board materials</h2>
+    <p class="lede">Pre-reads, packs and minutes from the Euraser Holdings board. Access restricted to directors, observers and counsel.</p>
+
+    <div class="meetings">
+      <a class="meeting" href="202606/">
+        <div class="meeting-date">
+          <div class="d-day">16</div>
+          <div class="d-mon">Jun 2026</div>
+        </div>
+        <div class="meeting-body">
+          <div class="meeting-title">First Formal Board Meeting</div>
+          <div class="meeting-summary">Governance &amp; cadence · Q1 2026 financial review · UK investment decisions: TRUK, Naama, Notting Hill Gate · Pipeline status: Denmark &amp; Germany.</div>
+          <div class="meeting-tags">
+            <span class="tag res">5 resolutions</span>
+            <span class="tag info">18 pages</span>
+          </div>
+        </div>
+        <div class="meeting-go">Open pack →</div>
+      </a>
+    </div>
+
+    <div class="between">
+      <span class="lbl">Next meeting</span>
+      <span class="txt">3 August 2026 — Q2 2026 review. Papers circulated by 25 July 2026.</span>
+    </div>
+  </div>
+
+  <div class="ft">
+    <span class="serif">Answers, Not Guesswork</span>
+    <span class="mid">Euraser Holdings — Board · Index</span>
+    <span class="serif">We Remove Tattoos</span>
+  </div>
+</section>
+
+</body>
+</html>

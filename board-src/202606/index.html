@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Euraser Holdings Ltd — Board Meeting — 16 June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBEFD2;
+    --ink:#17120D;
+    --blue:#2020FF;
+    --corn:#8DABE4;
+    --orange:#FFB266;
+    --brown:#3B2C20;
+    --cream:#FFF6E3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{background:#2a241d;}
+  body{font-family:'Montserrat',sans-serif;color:var(--ink);}
+
+  .page{
+    width:1280px;height:720px;
+    background:var(--paper);
+    margin:28px auto;
+    position:relative;overflow:hidden;
+    display:flex;flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.45);
+  }
+
+  .hd{display:flex;align-items:flex-end;justify-content:space-between;padding:26px 44px 10px 44px;border-bottom:2.5px solid var(--ink);flex:0 0 auto;}
+  .hd .sec{font-family:'Archivo Black';font-size:17px;border-bottom:3px solid var(--ink);padding-bottom:2px;}
+  .hd .meta{display:flex;gap:26px;font-size:9.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#4a4036;padding-bottom:4px;}
+  .ft{flex:0 0 auto;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:38px;font-size:10.5px;}
+  .ft .serif{font-family:'EB Garamond',serif;font-style:italic;font-size:13px;}
+  .ft .mid{font-weight:600;letter-spacing:1.6px;text-transform:uppercase;font-size:9.5px;}
+  .body{flex:1 1 auto;padding:26px 44px 22px 44px;overflow:hidden;}
+
+  .secstrip{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+  .secstrip .sn{font-family:'Archivo Black';font-size:13px;background:var(--ink);color:var(--paper);padding:4px 10px;}
+  .secstrip .st{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;}
+  .secstrip .tm{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#5a4f43;margin-left:auto;}
+
+  h2.title{font-family:'Archivo Black';font-size:30px;line-height:1.08;margin-bottom:6px;}
+  .lede{font-family:'EB Garamond',serif;font-style:italic;font-size:16px;color:#3d342a;margin-bottom:18px;line-height:1.4;}
+
+  .tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:4px 10px;border-radius:2px;}
+  .tag.res{background:var(--blue);color:#fff;}
+  .tag.info{background:var(--brown);color:var(--paper);}
+  .tag.rec{background:var(--orange);color:var(--ink);}
+
+  .ph{color:#b3431f;font-weight:700;border-bottom:1.5px dashed #b3431f;}
+
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{font-size:9.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;text-align:left;padding:7px 10px;border-bottom:2px solid var(--ink);}
+  td{padding:7px 10px;border-bottom:1px solid #d8c9a8;vertical-align:top;line-height:1.4;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  tr.total td{font-weight:800;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);background:var(--cream);}
+  .pos{color:#1d6b3a;font-weight:700;}
+  .neg{color:#b3431f;font-weight:700;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+
+  .block{padding:15px 18px;}
+  .block.corn{background:var(--corn);}
+  .block.orange{background:var(--orange);}
+  .block.brown{background:var(--brown);color:var(--paper);}
+  .block h4{font-family:'Archivo Black';font-size:14px;margin-bottom:4px;}
+  .block .sub{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;opacity:.85;margin-bottom:4px;}
+
+  .kpi{background:var(--cream);border:1.5px solid var(--ink);padding:18px 18px 14px;}
+  .kpi .v{font-family:'Archivo Black';font-size:38px;line-height:1;}
+  .kpi .l{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;margin-top:8px;}
+  .kpi .d{font-size:11px;margin-top:6px;color:#4a4036;line-height:1.45;}
+
+  ul.tight{list-style:none;}
+  ul.tight li{font-size:12px;line-height:1.5;padding-left:16px;position:relative;margin-bottom:6px;}
+  ul.tight li::before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;background:var(--blue);}
+  ul.tight.or li::before{background:var(--orange);}
+  ul.tight.br li::before{background:var(--brown);}
+
+  .small{font-size:10.5px;color:#5a4f43;line-height:1.5;}
+  .note{background:var(--cream);border-left:4px solid var(--orange);padding:10px 14px;font-size:11.5px;line-height:1.5;}
+
+  .askbox{background:var(--cream);border:1.5px solid var(--ink);padding:12px 16px;margin-top:14px;display:flex;gap:14px;align-items:flex-start;}
+  .askbox .aid{font-family:'Archivo Black';font-size:12px;background:var(--blue);color:#fff;padding:4px 10px;white-space:nowrap;}
+  .askbox.nores .aid{background:var(--brown);}
+  .askbox p{font-size:12px;line-height:1.5;}
+
+  .resrow{background:var(--cream);border:1.5px solid var(--ink);padding:10px 16px;margin-bottom:10px;}
+  .resrow .rhead{display:flex;align-items:center;gap:10px;margin-bottom:5px;}
+  .resrow .rid{font-family:'Archivo Black';font-size:12px;background:var(--blue);color:#fff;padding:3px 9px;}
+  .resrow .rname{font-weight:800;font-size:12px;letter-spacing:.4px;}
+  .resrow .rsign{display:flex;gap:30px;font-size:10px;font-weight:600;letter-spacing:.6px;color:#5a4f43;text-transform:uppercase;}
+
+  .cover{background:linear-gradient(160deg,#211a13 0%,#3B2C20 70%,#4a3826 100%);color:var(--paper);}
+  .cover .body{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+  .cover .wordmark{font-family:'Archivo Black';font-size:84px;letter-spacing:-1px;line-height:.95;}
+  .cover .wordmark sup{font-size:22px;vertical-align:super;}
+  .cover .sub1{font-weight:500;font-size:22px;margin-top:18px;color:#f2e3c2;}
+  .cover .meta{margin-top:36px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:#d8c19a;line-height:2;}
+  .cover .pill{display:inline-block;margin-top:26px;background:var(--blue);color:#fff;font-weight:800;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 22px;border-radius:999px;}
+
+  .arc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;}
+  .arc .m{border:1.5px solid var(--ink);background:var(--cream);display:flex;flex-direction:column;}
+  .arc .m .dt{font-family:'Archivo Black';font-size:15px;background:var(--ink);color:var(--paper);padding:8px 12px;}
+  .arc .m.now .dt{background:var(--blue);}
+  .arc .m .mt{padding:10px 12px 4px;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.5px;line-height:1.4;}
+  .arc .m ul{list-style:none;padding:4px 12px 10px;flex:1;}
+  .arc .m ul li{font-size:10.5px;line-height:1.45;margin-bottom:5px;padding-left:12px;position:relative;}
+  .arc .m ul li::before{content:"–";position:absolute;left:0;}
+  .arc .m .dec{background:var(--orange);padding:8px 12px;font-size:9.5px;line-height:1.45;}
+  .arc .m .dec b{display:block;font-size:8.5px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:3px;}
+
+  .agrow{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid #d8c9a8;}
+  .agrow .n{font-family:'Archivo Black';font-size:17px;width:38px;color:var(--blue);}
+  .agrow .t{flex:1;}
+  .agrow .t b{font-size:14px;display:block;}
+  .agrow .t span{font-size:10.5px;color:#5a4f43;}
+  .agrow .time{font-size:11px;font-weight:700;color:#5a4f43;width:96px;text-align:right;font-variant-numeric:tabular-nums;}
+  .agrow .tg{width:118px;text-align:right;}
+
+  @media print{
+    html{background:#fff;}
+    .page{margin:0;box-shadow:none;page-break-after:always;}
+    @page{size:1280px 720px;margin:0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · COVER ============ -->
+<section class="page cover">
+  <div class="body">
+    <div class="wordmark">EURASER<br>HOLDINGS<sup>LTD</sup></div>
+    <div class="sub1">Board Meeting — 16 June 2026</div>
+    <div class="meta">
+      13:00–14:30 CEST · 12:00–13:30 BST · Google Meet<br>
+      Notice issued by Gustav Grippe, acting as Company Secretary<br>
+      Companies Act 2006 &amp; Articles of Association · Pre-SHA (draft circulated 26 May 2026)
+    </div>
+    <div class="pill">Pre-Read Only · Strictly Confidential</div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 2 · BOARD ARC ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">2026 Board Calendar</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>02-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <h2 class="title">Proposed annual meeting cadence</h2>
+    <p class="lede">Four meetings per year on a quarterly rhythm, each combining financial review with the decisions due in that quarter. Cadence proposed for adoption today under Resolution R1.</p>
+    <div class="arc">
+      <div class="m now">
+        <div class="dt">16 JUN 2026 — TODAY</div>
+        <div class="mt">First Formal Board Meeting</div>
+        <ul>
+          <li>Governance &amp; cadence</li>
+          <li>Q1 2026 financial review</li>
+          <li>UK investment decisions: TRUK, Naama, Notting Hill Gate</li>
+          <li>Pipeline status: Denmark &amp; Germany</li>
+        </ul>
+        <div class="dec"><b>Decisions requested</b>R1 Cadence · R2 SHA · R3 TRUK · R4 Naama · R5 NHG lease</div>
+      </div>
+      <div class="m">
+        <div class="dt">3 AUG 2026</div>
+        <div class="mt">Q2 2026 Review</div>
+        <ul>
+          <li>Q2 2026 financial review</li>
+          <li>Reporting framework progress: P&amp;L, capacity and KPI alignment</li>
+          <li>Denmark close &amp; Germany structure update</li>
+        </ul>
+        <div class="dec"><b>Decisions requested</b>To be confirmed with the Q2 agenda</div>
+      </div>
+      <div class="m">
+        <div class="dt">NOV 2026</div>
+        <div class="mt">Q3 2026 Review + 2027 Plan</div>
+        <ul>
+          <li>Q3 financials, incl. post-brand-launch performance</li>
+          <li>2027 operating plan</li>
+          <li>De novo programme review</li>
+        </ul>
+        <div class="dec"><b>Decisions requested</b>Approve 2027 operating &amp; capital plan</div>
+      </div>
+      <div class="m">
+        <div class="dt">FEB 2027</div>
+        <div class="mt">FY2026 Results Review</div>
+        <ul>
+          <li>FY2026 full-year results</li>
+          <li>Refreshed value creation plan</li>
+          <li>Germany platform decision point</li>
+        </ul>
+        <div class="dec"><b>Decisions requested</b>Endorse refreshed value creation plan</div>
+      </div>
+    </div>
+    <div style="position:relative;height:14px;">
+      <span style="position:absolute;left:25%;top:0;height:14px;border-left:1.5px dashed #8a7a64;"></span>
+      <span style="position:absolute;left:50%;top:0;height:14px;border-left:1.5px dashed #8a7a64;"></span>
+      <span style="position:absolute;left:75%;top:0;height:14px;border-left:1.5px dashed #8a7a64;"></span>
+    </div>
+    <div style="border:1.5px dashed #8a7a64;padding:7px 16px;display:flex;align-items:center;gap:12px;">
+      <span style="font-size:9px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:#8a7a64;white-space:nowrap;">Between meetings</span>
+      <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:#5a4f43;">Monthly check-ins between management and board between quarterly meetings &mdash; no board pack distributed.</span>
+    </div>
+    <p class="small" style="margin-top:10px;">Quarterly meetings target the first Wednesday of August, November, February and May. Notices and board papers issued in accordance with the governance framework; Q2 boardpack by 25 July 2026.</p>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 3 · AGENDA ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Agenda</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>03-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <h2 class="title">Agenda — 16 June 2026</h2>
+    <p class="lede">Ninety minutes. Six sections. Five resolutions requested.</p>
+    <div class="grid2" style="grid-template-columns:1.15fr .85fr;">
+      <div>
+        <div class="agrow"><span class="n">—</span><span class="t"><b>Welcome &amp; quorum</b></span><span class="time">13:00</span><span class="tg"></span></div>
+        <div class="agrow"><span class="n">01</span><span class="t"><b>Governance &amp; procedural matters</b><span>Board cadence · Shareholders' Agreement</span></span><span class="time">13:05 · 10 min</span><span class="tg"><span class="tag res">R1 · R2</span></span></div>
+        <div class="agrow"><span class="n">02</span><span class="t"><b>Q1 2026 performance review</b><span>Consolidated results vs budget and prior year</span></span><span class="time">13:15 · 15 min</span><span class="tg"><span class="tag info">Information</span></span></div>
+        <div class="agrow"><span class="n">03</span><span class="t"><b>Investment decisions</b><span>TRUK ratification · Naama pre-pack · pipeline DK &amp; DE</span></span><span class="time">13:30 · 30 min</span><span class="tg"><span class="tag res">R3 · R4</span></span></div>
+        <div class="agrow"><span class="n">04</span><span class="t"><b>De novo strategy</b><span>Notting Hill Gate lease authority</span></span><span class="time">14:00 · 10 min</span><span class="tg"><span class="tag res">R5</span></span></div>
+        <div class="agrow"><span class="n">05</span><span class="t"><b>Group alignment &amp; organisation</b><span>Functions, headcount, brand launch, reporting frameworks</span></span><span class="time">14:10 · 15 min</span><span class="tg"><span class="tag info">Information</span></span></div>
+        <div class="agrow"><span class="n">06</span><span class="t"><b>Any other business &amp; close</b><span>Next meeting: 3 August 2026</span></span><span class="time">14:25</span><span class="tg"></span></div>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:14px;margin-bottom:8px;">Directors</h4>
+        <table>
+          <tr><td><b>Mark Evans</b></td><td>Factory Capital</td></tr>
+          <tr><td><b>Christopher Vossen</b></td><td>Factory Capital</td></tr>
+          <tr><td><b>Paulo Eapen</b></td><td>Factory Capital</td></tr>
+          <tr><td><b>James McBeath</b></td><td>HEAL Partners</td></tr>
+          <tr><td><b>Gustav Grippe</b></td><td>Founder Shareholders · CEO</td></tr>
+        </table>
+        <p class="small" style="margin-top:8px;">Observers: Oscar Holm (CFO) · Gonzalve Bich (FC)</p>
+        <div class="note" style="margin-top:16px;">
+          All resolutions require a simple majority. Full resolution texts and signature blocks are set out on page 12. Minutes will be circulated within 5 business days of the meeting.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 4 · SECTION 01 GOVERNANCE ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Governance &amp; Procedural Matters</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>04-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">SECTION 01</span><span class="st">Governance &amp; Procedural Matters</span><span class="tm">13:05 · 10 min · Resolutions R1, R2</span></div>
+    <h2 class="title">Establishing the governance framework</h2>
+    <p class="lede">This is the first formal board meeting of Euraser Holdings Ltd, convened under the Companies Act 2006 and the Articles of Association, pending execution of the Shareholders' Agreement.</p>
+    <div class="grid2">
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:14px;margin-bottom:6px;">Current position</h4>
+        <ul class="tight">
+          <li>Five directors in office; quorum requires representation of both Factory Capital and the Founder Shareholders.</li>
+          <li>The Shareholders' Agreement is in draft form (circulated 26 May 2026, Shoosmiths LLP) and has not yet been executed. Governance is conducted in the spirit of the draft pending execution.</li>
+          <li>No Company Secretary has been formally appointed; the CEO is administering board matters in the interim.</li>
+          <li>Merger update &mdash; Mark Evans to brief the Board on merger status under this section.</li>
+        </ul>
+        <h4 style="font-family:'Archivo Black';font-size:14px;margin:14px 0 6px;">Proposed actions</h4>
+        <ul class="tight">
+          <li>Adopt a quarterly board cadence, with the first quarterly meeting on 3 August 2026 to review Q2 2026 results (R1).</li>
+          <li>Authorise management to finalise the SHA with Shoosmiths LLP and circulate an execution version to all shareholders within 28 business days (R2).</li>
+        </ul>
+      </div>
+      <div>
+        <div class="askbox" style="margin-top:0;">
+          <span class="aid">R1</span>
+          <p><b>Board cadence.</b> The Board shall meet quarterly, targeting the first Wednesday of August, November, February and May. First quarterly meeting: 3 August 2026, reviewing Q2 2026 financial results and business performance.</p>
+        </div>
+        <div class="askbox">
+          <span class="aid">R2</span>
+          <p><b>SHA execution.</b> Management is authorised to work with Shoosmiths LLP to finalise the Shareholders' Agreement and circulate an execution version to all shareholders within 28 business days of this meeting.</p>
+        </div>
+        <p class="small" style="margin-top:10px;">Full resolution texts as circulated in the notice; signature blocks on page 12.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 5 · SECTION 02 Q1 SCORECARD ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Q1 2026 Performance Review</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>05-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">SECTION 02</span><span class="st">Q1 2026 Performance Review</span><span class="tm">13:15 · 15 min · Information</span></div>
+    <h2 class="title">Q1 2026 financial scorecard</h2>
+    <p class="lede">Consolidated results across Sweden, Norway, Denmark, Finland and the Netherlands. Revenue and clinic-level profitability ahead of plan; group EBITDA below plan on planned central investment.</p>
+    <div class="grid3" style="grid-template-columns:repeat(4,1fr);gap:14px;">
+      <div class="kpi"><div class="v">€1.51M</div><div class="l">Revenue</div><div class="d">+2.3% vs budget · <span class="pos">+18% YoY</span><br>Growth in all markets except Norway (−1%)</div></div>
+      <div class="kpi"><div class="v">69.8%</div><div class="l">Gross Margin</div><div class="d">vs 69.6% budget — on plan<br>PY 74.0% reflects cost mix and country weighting</div></div>
+      <div class="kpi"><div class="v">€825K</div><div class="l">4-Wall EBITDA</div><div class="d">54.5% margin · +0.5% vs budget · <span class="pos">+9% YoY</span></div></div>
+      <div class="kpi"><div class="v">€178K</div><div class="l">Group EBITDA</div><div class="d">−12.5% vs budget · <span class="neg">−55% YoY</span><br>Decline driven by central cost build-up</div></div>
+    </div>
+    <div class="grid2" style="margin-top:18px;">
+      <div class="block corn">
+        <div class="sub">Country performance</div>
+        <p style="font-size:11.5px;line-height:1.55;">The Netherlands (+15% YoY, ahead of plan) and Finland (+44% YoY, well ahead on margin) carried the quarter. Sweden grew +29% YoY but margins slipped against budget. Norway revenue was broadly in line, with margins below plan following staff interruptions from mid-February; a substantial revenue reduction of approximately 50% is expected in June and July, with 2 of 3.5 FTEs on short-notice sick leave. Denmark recorded its first revenue (pre-revenue in Q1 2025).</p>
+      </div>
+      <div class="block orange">
+        <div class="sub">Group EBITDA variance</div>
+        <p style="font-size:11.5px;line-height:1.55;">Corporate costs increased €167K YoY to €255K (+191%), reflecting planned central investment: WAU staff costs more than doubled as the central team was built out, alongside the brand programme and NetSuite licence and implementation — spend lines that did not exist in the prior year. Against budget, Corporate is only €12K over (+4.9%). Underlying clinic operations improved year-on-year.</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top:14px;">Full commercial and clinic-level KPI reporting follows the Beam and NetSuite implementations per market, contingent on completion of the merger.</p>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 6 · SECTION 02 P&L ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Q1 2026 Performance Review</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>06-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">SECTION 02</span><span class="st">Q1 2026 Performance Review — continued</span><span class="tm">Information</span></div>
+    <h2 class="title">Q1 2026 P&amp;L vs budget and prior year</h2>
+    <div class="grid2" style="grid-template-columns:1.15fr .85fr;margin-top:8px;">
+      <div>
+        <table>
+          <tr><th>€</th><th class="num">Actual</th><th class="num">Budget</th><th class="num">PY</th><th class="num">vs Bud</th><th class="num">YoY</th></tr>
+          <tr><td><b>Revenue</b></td><td class="num">1,514,511</td><td class="num">1,480,836</td><td class="num">1,280,665</td><td class="num pos">+2.3%</td><td class="num pos">+18.3%</td></tr>
+          <tr><td>Gross margin</td><td class="num">1,057,606</td><td class="num">1,030,750</td><td class="num">947,656</td><td class="num pos">+2.6%</td><td class="num pos">+11.6%</td></tr>
+          <tr><td>4-Wall EBITDA</td><td class="num">824,931</td><td class="num">820,624</td><td class="num">756,319</td><td class="num pos">+0.5%</td><td class="num pos">+9.1%</td></tr>
+          <tr><td>EBITDAC</td><td class="num">432,377</td><td class="num">445,802</td><td class="num">481,151</td><td class="num neg">−3.0%</td><td class="num neg">−10.1%</td></tr>
+          <tr class="total"><td>Group EBITDA</td><td class="num">177,512</td><td class="num">202,886</td><td class="num">393,461</td><td class="num neg">−12.5%</td><td class="num neg">−54.9%</td></tr>
+        </table>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin:14px 0 6px;">Commentary</h4>
+        <ul class="tight">
+          <li>Revenue and 4-Wall EBITDA are marginally ahead of budget. The consolidated figure masks country-level divergence: the Netherlands and Finland over-deliver, Sweden and Norway fall short on margin, and Denmark is ramping behind plan.</li>
+          <li>Cost layers below 4-Wall — country administration and central group costs — absorb the topline headroom. EBITDAC misses budget by €13K and group EBITDA by €25K.</li>
+          <li>Actuals translate at monthly average FX rates; budget was set at the 31 December 2025 closing rate held flat. SEK, NOK and DKK variances therefore include a translation component.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block brown">
+          <div class="sub">Reporting outlook</div>
+          <p style="font-size:11.5px;line-height:1.55;color:var(--paper);margin-bottom:8px;">Group financial reporting is moving towards an aligned framework, with timing dependent on Beam and NetSuite implementation progress per market:</p>
+          <ul class="tight" style="margin:0;">
+            <li style="color:var(--paper);">Clinic-level and consolidated P&amp;L on a common chart of accounts</li>
+            <li style="color:var(--paper);">Clinic segmentation with standardised KPIs (e.g. AUV, revenue per treatment room, sessions per clinician per day, conversion)</li>
+            <li style="color:var(--paper);">Capacity framework: clinic, room, laser and clinician utilisation</li>
+          </ul>
+        </div>
+        <p class="small" style="margin-top:10px;">For this meeting, performance is presented on a best-available basis from entity-level P&amp;L and operational data. Detail by country is provided in the Appendix (pages 13&ndash;18).</p>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 7 · SECTION 03 TRUK ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Investment Decisions</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>07-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">SECTION 03</span><span class="st">Investment Decisions — TRUK</span><span class="tm">13:30 · 30 min for section · Resolution R3</span></div>
+    <h2 class="title">TRUK — ratification and approval</h2>
+    <p class="lede">The Board is asked to ratify the completed acquisition of the business and assets of Remove Your Tattoos Ltd (trading as Tattoo Removal UK) by Euraser UK Ltd.</p>
+    <div class="grid2">
+      <div>
+        <table>
+          <tr><th colspan="2">Transaction summary</th></tr>
+          <tr><td>Structure</td><td class="num">Asset purchase by Euraser UK Ltd</td></tr>
+          <tr><td>Sites</td><td class="num">Manchester · Leeds · Bolton</td></tr>
+          <tr><td>Acquisition price</td><td class="num"><b>€450K</b></td></tr>
+          <tr><td>Total group investment incl. refits &amp; laser</td><td class="num"><b>~€1.1M</b></td></tr>
+          <tr><td>Revenue target</td><td class="num">&gt;100% YoY within 18 months</td></tr>
+          <tr><td>Management</td><td class="num">Marcus Day retained as GM (from 1 June 2026)</td></tr>
+          <tr><td>Completion date</td><td class="num">1 June 2026</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:14px;margin-bottom:6px;">Integration programme</h4>
+        <ul class="tight">
+          <li>Pricing alignment, laser upgrades and clinic refit programme commence in June 2026.</li>
+          <li>Operational alignment with group systems (Beam, group policies) targeted for 1 September 2026, in step with the brand launch.</li>
+          <li>Staff onboarding led by the People function as a first priority for the new People Lead.</li>
+          <li>Integration planning session in Stockholm on 11 June 2026.</li>
+          <li>Strong initial progress: operations successfully transitioned to Euraser UK.</li>
+        </ul>
+        <div class="askbox">
+          <span class="aid">R3</span>
+          <p><b>Resolution.</b> The Board ratifies and approves the acquisition on the terms presented, and authorises Gustav Grippe and Oscar Holm, jointly or severally, to execute all documents and take all steps necessary to confirm and progress the acquisition and integration programme.</p>
+        </div>
+        <p class="small" style="margin-top:8px;">For full transaction detail, see the separate Factory Capital Opportunity Overview.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 8 · SECTION 03 NAAMA ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Investment Decisions</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>08-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">SECTION 03</span><span class="st">Investment Decisions — Naama</span><span class="tm">Resolution R4</span></div>
+    <h2 class="title">Naama — pre-pack administration purchase</h2>
+    <p class="lede">The Board is asked to authorise Euraser UK Ltd to proceed with the pre-pack administration purchase of the business and assets of NAAMA Studios Ltd and certain assets of Lightsense Technologies Ltd.</p>
+    <div class="grid2">
+      <div>
+        <table>
+          <tr><th colspan="2">Offer status</th></tr>
+          <tr><td>Process</td><td class="num">Pre-pack administration</td></tr>
+          <tr><td>Administrator</td><td class="num">Emma Mifsud, Opus Restructuring LLP</td></tr>
+          <tr><td>Latest revised offer submitted</td><td class="num">1 June 2026</td></tr>
+          <tr><td>Offer consideration</td><td class="num"><span class="ph">[TBC — insert offer amount &amp; structure]</span></td></tr>
+          <tr><td>Scope</td><td class="num">NAAMA Studios business &amp; assets; certain Lightsense Technologies assets</td></tr>
+          <tr><td>Expected outcome timing</td><td class="num"><span class="ph">[TBC — administrator timeline]</span></td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:14px;margin-bottom:6px;">Considerations</h4>
+        <ul class="tight">
+          <li>Strengthens the London position alongside the planned Notting Hill Gate clinic; the sites serve different catchments, limiting overlap.</li>
+          <li>Co-identity rebrand (NAAMA × WAU) phased over 3–6 months per the standard playbook; client experience unchanged at completion.</li>
+          <li>Outcome rests with the administrator; the resolution gives management authority to complete on the terms of the submitted offer without a further board cycle.</li>
+        </ul>
+        <div class="askbox">
+          <span class="aid">R4</span>
+          <p><b>Resolution.</b> The Board authorises Euraser UK Ltd to proceed with the pre-pack administration purchase on the terms of the offer letter submitted to the administrator on 1 June 2026.</p>
+        </div>
+        <p class="small" style="margin-top:8px;">For full transaction detail, see the separate Factory Capital Opportunity Overview.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 9 · SECTION 03 PIPELINE ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Investment Decisions</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>09-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">SECTION 03</span><span class="st">Investment Decisions — Deal Pipeline</span><span class="tm">Information (confidential) · no resolution required</span></div>
+    <h2 class="title">Deal pipeline — Denmark and Germany</h2>
+    <div class="grid2" style="margin-top:8px;">
+      <div class="block corn">
+        <div class="sub">Denmark — LRC ApS</div>
+        <h4>Term sheet agreed · target close July 2026</h4>
+        <ul class="tight br" style="margin-top:8px;">
+          <li>Specialist laser tattoo removal operator, Åbyhøj (Aarhus); consistent with the group's preferred acquisition profile.</li>
+          <li>60% stake; due diligence and SPA execution in progress.</li>
+          <li>Consideration: <span class="ph">[TBC — insert agreed terms]</span>.</li>
+          <li>Brand applied internally at close; external transition 3–6 months post-close per the standard playbook.</li>
+        </ul>
+      </div>
+      <div class="block orange">
+        <div class="sub">Germany — Endlich Ohne / MSO</div>
+        <h4>Governance and operational alignment agreed; commercials and valuation ongoing</h4>
+        <ul class="tight br" style="margin-top:8px;">
+          <li>German regulation (NiSV) requires a physician-led structure; commercial and administrative activity sits in an MSO layer.</li>
+          <li>Structural options under legal review: acquire into an Endlich MSO, or establish an MSO with a clinical partner. External counsel engaged.</li>
+          <li>Target model combines O&amp;O clinics, dermatology partnerships, and the Endlich franchise network.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="askbox nores">
+      <span class="aid">ASKS</span>
+      <p><b>The Board is asked to:</b> (1) assign a deal lead for the Denmark transaction ahead of the July close; and (2) confirm appetite to proceed to legal documentation on the German MSO structure. No formal resolution is required.</p>
+    </div>
+    <p class="small" style="margin-top:8px;">For full transaction detail, see the separate Factory Capital Opportunity Overview.</p>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 10 · SECTION 04 NHG ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">De Novo Strategy</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>10-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">SECTION 04</span><span class="st">De Novo Strategy — Notting Hill Gate</span><span class="tm">14:00 · 10 min · Resolution R5</span></div>
+    <h2 class="title">Notting Hill Gate — lease authority</h2>
+    <p class="lede">The Board is asked to grant management full authority to execute the lease for 133 Notting Hill Gate, London W11 — the Group's first own-and-operated UK clinic. Savills reports a competing offer; the decision is time-sensitive.</p>
+    <div class="grid2">
+      <div>
+        <table>
+          <tr><th colspan="2">Lease — current position (via Savills)</th></tr>
+          <tr><td>Rent</td><td class="num"><b>£77,500 p.a.</b> (~£26K per treatment room)</td></tr>
+          <tr><td>Term</td><td class="num">10 years · tenant break at year 5</td></tr>
+          <tr><td>Rent free</td><td class="num">9 months (6 months at 100%, 6 months at 50%)</td></tr>
+          <tr><td>Deposit</td><td class="num">3 months offered; 6 months budgeted</td></tr>
+          <tr><td>Premises</td><td class="num">Ground floor + basement, good condition, A/C included</td></tr>
+          <tr><td>Conditionality</td><td class="num">Contract · Licence to Alter · board approval · survey</td></tr>
+        </table>
+      </div>
+      <div>
+        <table>
+          <tr><th colspan="2">Investment outline (estimates)</th></tr>
+          <tr><td>Test-fit</td><td class="num">Complete — 3 treatment rooms</td></tr>
+          <tr><td>Fit-out budget</td><td class="num">£440K (incl. £37K project costs, Mett Build)</td></tr>
+          <tr><td>Total cash commitment</td><td class="num"><b>~€491K</b> (deposit, build-out, laser, Y1 operating)</td></tr>
+          <tr><td>Year 1 revenue target</td><td class="num">€300K</td></tr>
+          <tr><td>Target break-even</td><td class="num">15 months</td></tr>
+          <tr><td>Target opening</td><td class="num">Q3/Q4 2026, subject to lease and fit-out</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="askbox">
+      <span class="aid">R5</span>
+      <p><b>Resolution.</b> The Board grants management full authority to execute the lease at 133 Notting Hill Gate via Savills on commercially reasonable terms consistent with the parameters presented. This is the only board approval required to proceed.</p>
+    </div>
+    <p class="small" style="margin-top:8px;">Further detail is set out in the full Real Estate Committee documentation.</p>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 11 · SECTION 05 GROUP ALIGNMENT ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Group Alignment &amp; Organisation</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>11-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">SECTION 05</span><span class="st">Group Alignment &amp; Organisation</span><span class="tm">14:10 · 15 min · Information</span></div>
+    <h2 class="title">Organisation, priorities and reporting alignment</h2>
+    <div class="grid2" style="grid-template-columns:1.05fr .95fr;margin-top:6px;">
+      <div>
+        <table>
+          <tr><th>Function</th><th>Lead</th><th>Scope</th></tr>
+          <tr><td><b>Clinical</b></td><td>Sera</td><td>Protocols · clinical ops · safety &amp; compliance</td></tr>
+          <tr><td><b>Expansion</b></td><td>Bernard</td><td>Market entry · M&amp;A · integration · de novo</td></tr>
+          <tr><td><b>Capacity &amp; Growth</b></td><td>Anton</td><td>O&amp;O capacity · marketing &amp; CRM</td></tr>
+          <tr><td><b>Product</b></td><td>Gustav</td><td>Consumer &amp; clinician product · brand</td></tr>
+          <tr><td><b>Systems</b></td><td>Jesper</td><td>Beam · IT &amp; tooling · infrastructure</td></tr>
+          <tr><td><b>Finance</b></td><td>Oscar</td><td>NetSuite ERP · reporting · FP&amp;A · M&amp;A diligence</td></tr>
+          <tr><td><b>People</b></td><td>Karin</td><td>Recruitment · culture · HR compliance · policy</td></tr>
+        </table>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin:12px 0 6px;">Organisation update</h4>
+        <ul class="tight">
+          <li>People Lead (Karin) and an in-house Designer &amp; Content Creator hired; finance recruitment ongoing for summer 2026.</li>
+          <li>Open headcount — immediate priority: <b>De Novo Lead</b> (target hire Q3 2026), owning site selection, build-out, clinical readiness and launch across NHG and future openings.</li>
+          <li>Regional Manager Nordics role terminated effective 1 June 2026; Nordic coverage interim arrangement led by Gustav</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin-bottom:6px;">Strategic priorities — Q3–Q4 2026</h4>
+        <ul class="tight or">
+          <li>Close and integrate: TRUK live, Denmark close in July, Naama subject to administrator outcome.</li>
+          <li>Build the Germany platform: resolve the MSO structure and proceed to documentation.</li>
+          <li>Stand up the operating model: Beam in all markets; NetSuite completion with entity-level and consolidated reporting; De Novo Lead in place.</li>
+          <li>Brand rollout: group brand live from 1 September 2026, phased by market; co-identity approach for acquired UK businesses.</li>
+        </ul>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin:12px 0 6px;">Systems update</h4>
+        <ul class="tight or" style="margin-bottom:0;">
+          <li>Gustav to update on Beam in the board meeting.</li>
+        </ul>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin:12px 0 6px;">Reporting frameworks — in development</h4>
+        <table>
+          <tr><td><b>P&amp;L alignment</b></td><td>Clinic-level and consolidated view; common chart of accounts</td></tr>
+          <tr><td><b>Capacity framework</b></td><td>Clinic, room, laser and clinician utilisation</td></tr>
+          <tr><td><b>KPI alignment</b></td><td>FC-framework metrics group-wide; timing dependent on Beam and NetSuite rollout</td></tr>
+        </table>
+        <p class="small" style="margin-top:8px;"><b>The Board is asked to note progress and provide input on the three reporting frameworks ahead of the Q2 meeting.</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 12 · RESOLUTIONS & CLOSE ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Resolutions</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>12-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body" style="padding-top:20px;">
+    <div class="secstrip"><span class="sn">SECTION 06</span><span class="st">Resolutions · Any Other Business · Close</span><span class="tm">14:25 · Simple majority required</span></div>
+    <h2 class="title" style="font-size:26px;">Resolutions proposed at this meeting</h2>
+    <p class="small" style="margin-bottom:10px;">The secretary records the proposer, seconder and outcome for each resolution. Full texts as circulated in the pre-read notice.</p>
+
+    <div class="resrow"><div class="rhead"><span class="rid">R1</span><span class="rname">Board cadence — quarterly meetings, first on 3 August 2026</span></div>
+      <div class="rsign"><span>Proposed by ____________________</span><span>Seconded by ____________________</span><span>Resolved&nbsp;&nbsp;☐ Yes&nbsp;&nbsp;☐ No</span></div></div>
+    <div class="resrow"><div class="rhead"><span class="rid">R2</span><span class="rname">SHA execution — finalise with Shoosmiths LLP within 28 business days</span></div>
+      <div class="rsign"><span>Proposed by ____________________</span><span>Seconded by ____________________</span><span>Resolved&nbsp;&nbsp;☐ Yes&nbsp;&nbsp;☐ No</span></div></div>
+    <div class="resrow"><div class="rhead"><span class="rid">R3</span><span class="rname">TRUK acquisition — ratification and authority (Grippe / Holm, jointly or severally)</span></div>
+      <div class="rsign"><span>Proposed by ____________________</span><span>Seconded by ____________________</span><span>Resolved&nbsp;&nbsp;☐ Yes&nbsp;&nbsp;☐ No</span></div></div>
+    <div class="resrow"><div class="rhead"><span class="rid">R4</span><span class="rname">Naama — pre-pack administration purchase on the terms of the 1 June 2026 offer</span></div>
+      <div class="rsign"><span>Proposed by ____________________</span><span>Seconded by ____________________</span><span>Resolved&nbsp;&nbsp;☐ Yes&nbsp;&nbsp;☐ No</span></div></div>
+    <div class="resrow"><div class="rhead"><span class="rid">R5</span><span class="rname">Notting Hill Gate — full lease authority via Savills</span></div>
+      <div class="rsign"><span>Proposed by ____________________</span><span>Seconded by ____________________</span><span>Resolved&nbsp;&nbsp;☐ Yes&nbsp;&nbsp;☐ No</span></div></div>
+
+    <div class="grid3" style="margin-top:12px;">
+      <div class="small"><b>Minutes</b> circulated within 5 business days for director review and sign-off.</div>
+      <div class="small"><b>Questions on papers:</b> gustav@weareundo.com · oscar@weareundo.com</div>
+      <div class="small"><b>Next meeting:</b> 3 August 2026 — Q2 2026 review. Papers by 25 July 2026.</div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+
+
+<!-- ============ 13 · APPENDIX SWEDEN ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Appendix — Q1 2026 Detail</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>13-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">APPENDIX</span><span class="st">Q1 2026 Detail — Sweden</span><span class="tm">Reference only</span></div>
+    <h2 class="title">Sweden</h2>
+    <p class="lede">Four clinics: Stockholm Odenplan, Stockholm City, G&ouml;teborg, Malm&ouml;.</p>
+    <div class="grid2" style="grid-template-columns:1.05fr .95fr;">
+      <div>
+        <table>
+          <tr><th>&euro;</th><th class="num">Actual</th><th class="num">Budget</th><th class="num">PY</th><th class="num">vs Bud</th><th class="num">YoY</th></tr>
+          <tr><td><b>Revenue</b></td><td class="num">324,245</td><td class="num">321,799</td><td class="num">251,395</td><td class="num pos">+0.8%</td><td class="num pos">+29.0%</td></tr>
+          <tr><td>Gross margin</td><td class="num">224,938</td><td class="num">236,124</td><td class="num">185,424</td><td class="num neg">&minus;4.7%</td><td class="num pos">+21.3%</td></tr>
+          <tr><td>4-Wall EBITDA</td><td class="num">166,218</td><td class="num">189,066</td><td class="num">136,416</td><td class="num neg">&minus;12.1%</td><td class="num pos">+21.8%</td></tr>
+          <tr><td><b>EBITDA</b></td><td class="num">48,119</td><td class="num">76,239</td><td class="num">32,387</td><td class="num neg">&minus;36.9%</td><td class="num pos">+48.6%</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin-bottom:6px;">Commentary</h4>
+        <ul class="tight">
+          <li>Revenue on plan; margin levels slipped in Q1. Year-on-year is a different picture: revenue +29%, 4-Wall EBITDA +22%, EBITDA up from &euro;32K to &euro;48K (+49%).</li>
+          <li>GM% 69.4% vs 73.4% budgeted. Studio Staff ran &euro;89K vs &euro;75K budget (+18%), consistent month-to-month. Studio Staff grew faster than revenue YoY (+53% vs +29%) &mdash; consistent with building capacity, but worth monitoring into Q2.</li>
+          <li>4-Wall margin 51.3% vs 58.8% budgeted, driven by Facility Expenses (&euro;47K vs &euro;29K) &mdash; partly a structural under-budget, partly Stockholm City renovations.</li>
+          <li>Below 4-Wall, Office (&euro;13K vs &euro;6K) and Staff (&euro;38K vs &euro;21K) ran over budget, offset by S&amp;M under budget (&euro;53K vs &euro;61K) as significant marketing effort was directed to Denmark.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 14 · APPENDIX NETHERLANDS ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Appendix — Q1 2026 Detail</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>14-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">APPENDIX</span><span class="st">Q1 2026 Detail — Netherlands</span><span class="tm">Reference only</span></div>
+    <h2 class="title">Netherlands</h2>
+    <p class="lede">The strongest and most mature market; the main contributor to group profitability (&asymp;58% of consolidated revenue).</p>
+    <div class="grid2" style="grid-template-columns:1.05fr .95fr;">
+      <div>
+        <table>
+          <tr><th>&euro;</th><th class="num">Actual</th><th class="num">Budget</th><th class="num">PY</th><th class="num">vs Bud</th><th class="num">YoY</th></tr>
+          <tr><td><b>Revenue</b></td><td class="num">883,881</td><td class="num">841,899</td><td class="num">766,011</td><td class="num pos">+5.0%</td><td class="num pos">+15.4%</td></tr>
+          <tr><td>Gross margin</td><td class="num">631,451</td><td class="num">600,613</td><td class="num">578,239</td><td class="num pos">+5.1%</td><td class="num pos">+9.2%</td></tr>
+          <tr><td>4-Wall EBITDA</td><td class="num">523,510</td><td class="num">506,503</td><td class="num">495,102</td><td class="num pos">+3.4%</td><td class="num pos">+5.7%</td></tr>
+          <tr><td><b>EBITDA</b></td><td class="num">378,014</td><td class="num">352,924</td><td class="num">386,347</td><td class="num pos">+7.1%</td><td class="num neg">&minus;2.2%</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin-bottom:6px;">Commentary</h4>
+        <ul class="tight">
+          <li>Revenue exceeded budget by &euro;42K (+5.0%), driven mostly by March (&euro;317K vs &euro;291K budget, +9%); +15% YoY.</li>
+          <li>GM% 71.4% vs 71.3% budgeted &mdash; the revenue beat flowed through cleanly.</li>
+          <li>4-Wall margin 59.2% vs 60.2%: small negative variance from Facility (&euro;64K vs &euro;54K, +18%) and Travel (&euro;14K vs &euro;10.5K, +32%).</li>
+          <li>Below 4-Wall, costs broadly at or under budget; EBITDA &euro;378K vs &euro;353K (+7.1%). EBITDA broadly flat YoY (&minus;2%) despite revenue growth, as Studio Staff scaled faster than revenue (+37% vs +15%) ahead of the next phase of clinic openings.</li>
+          <li>Euro-denominated; no FX translation component in variances.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 15 · APPENDIX NORWAY ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Appendix — Q1 2026 Detail</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>15-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">APPENDIX</span><span class="st">Q1 2026 Detail — Norway</span><span class="tm">Reference only</span></div>
+    <h2 class="title">Norway</h2>
+    <p class="lede">One clinic: Oslo.</p>
+    <div class="grid2" style="grid-template-columns:1.05fr .95fr;">
+      <div>
+        <table>
+          <tr><th>&euro;</th><th class="num">Actual</th><th class="num">Budget</th><th class="num">PY</th><th class="num">vs Bud</th><th class="num">YoY</th></tr>
+          <tr><td><b>Revenue</b></td><td class="num">164,757</td><td class="num">167,279</td><td class="num">167,114</td><td class="num neg">&minus;1.5%</td><td class="num neg">&minus;1.4%</td></tr>
+          <tr><td>Gross margin</td><td class="num">94,496</td><td class="num">100,994</td><td class="num">108,353</td><td class="num neg">&minus;6.4%</td><td class="num neg">&minus;12.8%</td></tr>
+          <tr><td>4-Wall EBITDA</td><td class="num">63,100</td><td class="num">74,144</td><td class="num">74,798</td><td class="num neg">&minus;14.9%</td><td class="num neg">&minus;15.6%</td></tr>
+          <tr><td><b>EBITDA</b></td><td class="num">30,235</td><td class="num">45,493</td><td class="num">40,479</td><td class="num neg">&minus;33.5%</td><td class="num neg">&minus;25.3%</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin-bottom:6px;">Commentary</h4>
+        <ul class="tight">
+          <li>Revenue essentially in line in EUR terms (with an NOK translation component vs the budgeted rate). Trending up until major staff interruptions from mid-February.</li>
+          <li>GM% 57.3% vs 60.4% budgeted. Studio Staff &euro;66K vs &euro;61K (+9%), consistent across the quarter, driven by staffing exceptions due to long-term personnel illness; this continues temporarily while Oslo capacity is increased.</li>
+          <li>4-Wall margin 38.3% vs 44.3%: Laser Expenses &euro;19K vs &euro;12K (+58%) on February maintenance and repair (&euro;8.4K vs &euro;4.0K budget) &mdash; expected to even out through the year.</li>
+          <li>Below 4-Wall, S&amp;M on plan overall but volatile month-to-month on missing accrual accounting. Accounting &amp; Compliance &euro;10.4K vs &euro;7.5K (+38%) on a temporary accounting replacement; a permanent fix is in place.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 16 · APPENDIX DENMARK ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Appendix — Q1 2026 Detail</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>16-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">APPENDIX</span><span class="st">Q1 2026 Detail — Denmark</span><span class="tm">Reference only</span></div>
+    <h2 class="title">Denmark</h2>
+    <p class="lede">Newest market; pre-revenue ramp throughout Q1 2025.</p>
+    <div class="grid2" style="grid-template-columns:1.05fr .95fr;">
+      <div>
+        <table>
+          <tr><th>&euro;</th><th class="num">Actual</th><th class="num">Budget</th><th class="num">PY</th><th class="num">vs Bud</th><th class="num">YoY</th></tr>
+          <tr><td><b>Revenue</b></td><td class="num">3,221</td><td class="num">14,627</td><td class="num">&mdash;</td><td class="num neg">&minus;78.0%</td><td class="num pos">new</td></tr>
+          <tr><td>Gross margin</td><td class="num">(2,659)</td><td class="num">7,596</td><td class="num">(21)</td><td class="num neg">&minus;135.0%</td><td class="num">n/m</td></tr>
+          <tr><td>4-Wall EBITDA</td><td class="num">(14,343)</td><td class="num">(3,762)</td><td class="num">(11,972)</td><td class="num">n/m</td><td class="num">n/m</td></tr>
+          <tr><td><b>EBITDA</b></td><td class="num">(29,896)</td><td class="num">(7,290)</td><td class="num">(11,972)</td><td class="num">n/m</td><td class="num">n/m</td></tr>
+        </table>
+        <p class="small" style="margin-top:10px;">LRC ApS acquisition (Section 03) targets close in July 2026 and would add an established Aarhus operation to the Danish market.</p>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin-bottom:6px;">Commentary</h4>
+        <ul class="tight">
+          <li>Revenue &euro;3.2K vs &euro;14.6K budget (&minus;78%); negative gross margin in Q1, with an EBITDA loss of &euro;29.9K against a budgeted ramp loss of &euro;7.3K.</li>
+          <li>Significant marketing investment, &euro;14.8K actual vs &euro;2.8K budget (largely directed from Sweden), with results materialising slower than preferred.</li>
+          <li>Studio Staff (&euro;5.8K vs &euro;6.6K) and Facility (&euro;7.6K vs &euro;7.4K) essentially in line &mdash; the issue is revenue ramp combined with front-loaded marketing investment, not cost overruns in operations.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 17 · APPENDIX FINLAND ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Appendix — Q1 2026 Detail</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>17-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">APPENDIX</span><span class="st">Q1 2026 Detail — Finland</span><span class="tm">Reference only</span></div>
+    <h2 class="title">Finland</h2>
+    <p class="lede">Currently operated independently of We Are Undo.</p>
+    <div class="grid2" style="grid-template-columns:1.05fr .95fr;">
+      <div>
+        <table>
+          <tr><th>&euro;</th><th class="num">Actual</th><th class="num">Budget</th><th class="num">PY</th><th class="num">vs Bud</th><th class="num">YoY</th></tr>
+          <tr><td><b>Revenue</b></td><td class="num">138,407</td><td class="num">135,232</td><td class="num">96,145</td><td class="num pos">+2.3%</td><td class="num pos">+44.0%</td></tr>
+          <tr><td>Gross margin</td><td class="num">109,380</td><td class="num">85,423</td><td class="num">75,661</td><td class="num pos">+28.0%</td><td class="num pos">+44.6%</td></tr>
+          <tr><td>4-Wall EBITDA</td><td class="num">86,446</td><td class="num">54,673</td><td class="num">61,975</td><td class="num pos">+58.1%</td><td class="num pos">+39.5%</td></tr>
+          <tr><td><b>EBITDA</b></td><td class="num">5,905</td><td class="num">(21,564)</td><td class="num">33,910</td><td class="num">n/m</td><td class="num neg">&minus;82.6%</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin-bottom:6px;">Commentary</h4>
+        <ul class="tight">
+          <li>Revenue on plan; the budget is heavily cost-loaded for an expansion plan (staff and facilities) not realised in Q1, driving large favourable cost variances.</li>
+          <li>GM% 79.0% vs 63.2% budgeted &mdash; Studio Staff &euro;27K vs &euro;45K budget (&minus;40%) is the dominant driver. 4-Wall margin 62.5% vs 40.4%, with Facility &euro;11K vs &euro;19K (&minus;41%).</li>
+          <li>Below 4-Wall, Insurance came in heavy in January (&euro;8.6K vs &euro;100 budget) &mdash; a single-month spike to be accrued over the year.</li>
+          <li>Strongest top-line growth in the group YoY: revenue +44% (+&euro;42K) and 4-Wall EBITDA +40% (+&euro;24K), indicative of stage and traction. EBITDA fell from &euro;34K to &euro;6K YoY entirely on below-4-Wall items; underlying clinic performance is materially stronger.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+<!-- ============ 18 · APPENDIX CORPORATE ============ -->
+<section class="page">
+  <div class="hd"><span class="sec">Appendix — Q1 2026 Detail</span><div class="meta"><span>Euraser Board · 16 June 2026</span><span>18-18</span><span>Strictly Confidential</span></div></div>
+  <div class="body">
+    <div class="secstrip"><span class="sn">APPENDIX</span><span class="st">Q1 2026 Detail — Corporate</span><span class="tm">Reference only</span></div>
+    <h2 class="title">Corporate</h2>
+    <p class="lede">Group HQ &mdash; central We Are Undo costs.</p>
+    <div class="grid2" style="grid-template-columns:1.05fr .95fr;">
+      <div>
+        <table>
+          <tr><th>&euro;</th><th class="num">Actual</th><th class="num">Budget</th><th class="num">PY</th><th class="num">vs Bud</th><th class="num">YoY</th></tr>
+          <tr><td>WAU Marketing</td><td class="num">23,837</td><td class="num">0</td><td class="num">0</td><td class="num">n/m</td><td class="num">new</td></tr>
+          <tr><td>WAU Staff</td><td class="num">174,591</td><td class="num">220,416</td><td class="num">69,165</td><td class="num pos">&minus;20.8%</td><td class="num neg">+152.4%</td></tr>
+          <tr><td>WAU Consultants</td><td class="num">36,516</td><td class="num">12,000</td><td class="num">17,161</td><td class="num neg">+204.3%</td><td class="num neg">+112.8%</td></tr>
+          <tr><td>WAU IT</td><td class="num">22,450</td><td class="num">1,500</td><td class="num">0</td><td class="num neg">+1,396.7%</td><td class="num">new</td></tr>
+          <tr><td>WAU Travel</td><td class="num">7,380</td><td class="num">9,000</td><td class="num">1,364</td><td class="num pos">&minus;18.0%</td><td class="num neg">+441.0%</td></tr>
+          <tr><td>WAU Other</td><td class="num">(9,909)</td><td class="num">0</td><td class="num">0</td><td class="num">n/m</td><td class="num">n/m</td></tr>
+          <tr><td><b>Total Corporate</b></td><td class="num">254,865</td><td class="num">242,916</td><td class="num">87,690</td><td class="num neg">+4.9%</td><td class="num neg">+190.6%</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4 style="font-family:'Archivo Black';font-size:13px;margin-bottom:6px;">Commentary</h4>
+        <ul class="tight">
+          <li>Corporate is running &euro;12K over budget for the quarter (+4.9%). The composition is mixed: WAU Staff under budget on hiring postponements, compensating for overruns on Marketing, Consultants and IT.</li>
+          <li>The December 2025 budget was bare bones &mdash; mostly known staff costs and a few placeholders. Costs for the branding project and the NetSuite licence and implementation have been taken on intentionally as vital to progress.</li>
+          <li>Year-on-year, Corporate grew from &euro;88K to &euro;255K (+&euro;167K, +191%) &mdash; the driver of the group EBITDA decline described in Section 02.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
+</section>
+
+</body>
+</html>
