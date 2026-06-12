@@ -49,13 +49,50 @@
   .meetings{display:flex;flex-direction:column;gap:12px;}
 
   .meeting{
-    display:flex;align-items:stretch;gap:0;
+    display:flex;flex-direction:column;
     background:var(--cream);border:1.5px solid var(--ink);
-    text-decoration:none;color:inherit;
     transition:transform .12s ease, box-shadow .12s ease;
   }
   .meeting:hover{transform:translateY(-1px);box-shadow:0 6px 0 -2px var(--blue);}
   .meeting:hover .meeting-go{background:var(--blue);color:#fff;}
+  .meeting-main{
+    display:flex;align-items:stretch;gap:0;
+    text-decoration:none;color:inherit;
+  }
+
+  .meeting-reads{border-top:1.5px solid var(--ink);}
+  .meeting-reads summary{
+    list-style:none;cursor:pointer;
+    padding:8px 22px;
+    font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;
+    color:#5a4f43;
+    display:flex;align-items:center;gap:10px;
+  }
+  .meeting-reads summary::-webkit-details-marker{display:none;}
+  .meeting-reads summary::after{
+    content:"+";margin-left:auto;
+    font-family:'Archivo Black';font-size:14px;color:var(--ink);line-height:1;
+  }
+  .meeting-reads[open] summary::after{content:"−";}
+  .meeting-reads[open] summary{border-bottom:1px solid #d8c9a8;}
+  .meeting-reads ul{list-style:none;padding:4px 22px 12px;margin:0;}
+  .meeting-reads li{
+    padding:7px 0;
+    border-bottom:1px dotted #c9b88f;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    font-size:12px;
+  }
+  .meeting-reads li:last-child{border-bottom:none;}
+  .meeting-reads a.read-link{color:var(--blue);text-decoration:none;font-weight:700;}
+  .meeting-reads a.read-link:hover{text-decoration:underline;}
+  .meeting-reads .read-kind{
+    font-size:9px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;
+    padding:2px 7px;background:var(--ink);color:var(--paper);
+  }
+  .meeting-reads .read-rel{
+    font-family:'EB Garamond',serif;font-style:italic;font-size:12px;
+    color:#5a4f43;
+  }
 
   .meeting-date{
     background:var(--ink);color:var(--paper);
@@ -111,21 +148,24 @@
     <p class="lede">Pre-reads, packs and minutes from the Euraser Holdings board. Access restricted to directors, observers and counsel.</p>
 
     <div class="meetings">
-      <a class="meeting" href="202606/">
-        <div class="meeting-date">
-          <div class="d-day">16</div>
-          <div class="d-mon">Jun 2026</div>
-        </div>
-        <div class="meeting-body">
-          <div class="meeting-title">First Formal Board Meeting</div>
-          <div class="meeting-summary">Governance &amp; cadence · Q1 2026 financial review · UK investment decisions: TRUK, Naama, Notting Hill Gate · Pipeline status: Denmark &amp; Germany.</div>
-          <div class="meeting-tags">
-            <span class="tag res">5 resolutions</span>
-            <span class="tag info">18 pages</span>
+      <article class="meeting" data-meeting="202606">
+        <a class="meeting-main" href="202606/">
+          <div class="meeting-date">
+            <div class="d-day">16</div>
+            <div class="d-mon">Jun 2026</div>
           </div>
-        </div>
-        <div class="meeting-go">Open pack →</div>
-      </a>
+          <div class="meeting-body">
+            <div class="meeting-title">First Formal Board Meeting</div>
+            <div class="meeting-summary">Governance &amp; cadence · Q1 2026 financial review · UK investment decisions: TRUK, Naama, Notting Hill Gate · Pipeline status: Denmark &amp; Germany.</div>
+            <div class="meeting-tags">
+              <span class="tag res">5 resolutions</span>
+              <span class="tag info">18 pages</span>
+            </div>
+          </div>
+          <div class="meeting-go">Open pack →</div>
+        </a>
+        <!-- DETAILED_READS:202606 -->
+      </article>
     </div>
 
     <div class="between">

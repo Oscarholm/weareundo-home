@@ -95,6 +95,16 @@
   .resrow .rname{font-weight:800;font-size:12px;letter-spacing:.4px;}
   .resrow .rsign{display:flex;gap:30px;font-size:10px;font-weight:600;letter-spacing:.6px;color:#5a4f43;text-transform:uppercase;}
 
+  .reads-list{display:flex;flex-direction:column;gap:10px;margin-top:6px;}
+  .read-card{background:var(--cream);border:1.5px solid var(--ink);display:flex;align-items:stretch;}
+  .read-card .rk{background:var(--brown);color:var(--paper);padding:14px 16px;display:flex;flex-direction:column;justify-content:center;min-width:148px;font-size:9.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;}
+  .read-card .rk.no{background:#5a4f43;}
+  .read-card .rb{flex:1;padding:13px 18px;display:flex;flex-direction:column;justify-content:center;gap:4px;}
+  .read-card .rb .rt{font-family:'Archivo Black';font-size:15px;line-height:1.15;}
+  .read-card .rb .rr{font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:#5a4f43;}
+  .read-card .rg{display:flex;align-items:center;justify-content:center;padding:0 24px;border-left:1.5px solid var(--ink);font-size:10.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;color:var(--ink);white-space:nowrap;transition:background-color .12s ease,color .12s ease;}
+  .read-card .rg:hover{background:var(--blue);color:#fff;}
+
   .cover{background:linear-gradient(160deg,#211a13 0%,#3B2C20 70%,#4a3826 100%);color:var(--paper);}
   .cover .body{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
   .cover .wordmark{font-family:'Archivo Black';font-size:84px;letter-spacing:-1px;line-height:.95;}
@@ -771,6 +781,8 @@
   </div>
   <div class="ft"><span class="serif">Answers, Not Guesswork</span><span class="mid">Euraser Holdings — Board · 16 June 2026</span><span class="serif">We Remove Tattoos</span></div>
 </section>
+
+<!-- DETAILED_READS -->
 
 </body>
 </html>

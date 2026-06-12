@@ -1,0 +1,26 @@
+[
+  {
+    "title": "REC Notting Hill",
+    "kind": "Recommendation",
+    "url": "https://drive.google.com/file/d/1FMYEOVpnuoo2aLkd_jtnLagEW8-7TMOU/view?usp=sharing",
+    "related_to": "Notting Hill Gate"
+  },
+  {
+    "title": "TRUK Opportunity Overview",
+    "kind": "Overview",
+    "url": "https://drive.google.com/file/d/17XMa4Dj9WctMZsnlFXySAX1aWYKY6_Ra/view?usp=drive_link",
+    "related_to": "TRUK"
+  },
+  {
+    "title": "Denmark Opportunity Overview",
+    "kind": "Overview",
+    "url": "https://drive.google.com/file/d/18ANNJ4RTQYrH3qrIqKn7II7hEZc6uCHh/view?usp=drive_link",
+    "related_to": "Denmark"
+  },
+  {
+    "title": "Germany Opportunity Overview",
+    "kind": "Overview",
+    "url": "https://drive.google.com/file/d/13K23jJsD7cRwDTyOTDhcWnfQ-WwvEcQG/view?usp=drive_link",
+    "related_to": "Germany"
+  }
+]
