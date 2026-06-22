@@ -33,11 +33,10 @@
             background-color: #f1ebe5;
             color: #3c3c3c;
             font-family: 'Futura PT', 'Futura', 'Century Gothic', 'AppleGothic', sans-serif;
-            height: 100vh;
-            height: 100dvh;
+            min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
         }
 
         .nav {
@@ -96,10 +95,9 @@
 
         .layout {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             width: 100%;
             max-width: 960px;
-            height: 100%;
         }
 
         /* ── Job list ── */
@@ -156,23 +154,14 @@
 
         .job-detail {
             flex: 1;
-            position: relative;
-            height: 100%;
         }
 
         .job-panel {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
+            display: none;
         }
 
         .job-panel.active {
-            opacity: 1;
-            pointer-events: auto;
+            display: block;
         }
 
         .detail-title {
@@ -323,6 +312,12 @@ body.showing-detail .job-list {
                 <div class="job-item" data-index="1">
                     <span class="job-label">Regional Manager — Germany</span>
                 </div>
+                <div class="job-item" data-index="2">
+                    <span class="job-label">Skin Therapist — Netherlands</span>
+                </div>
+                <div class="job-item" data-index="3">
+                    <span class="job-label">Clinician — Denmark</span>
+                </div>
             </div>
 
             <div class="divider"></div>
@@ -350,6 +345,28 @@ body.showing-detail .job-list {
                         <p>We are looking for someone with native or bilingual German fluency, a strong command of English, and ideally experience in the German aesthetic or medical market. You can hold a high-level conversation in the morning and manage a clinic buildout in the afternoon.</p>
                     </div>
                     <a class="apply-btn" href="https://www.linkedin.com/jobs/view/4374891658/" target="_blank" rel="noopener">Apply on LinkedIn</a>
+                </div>
+
+                <div class="job-panel" data-index="2">
+                    <h2 class="detail-title">Skin Therapist — Netherlands</h2>
+                    <p class="detail-meta">24&ndash;40 hrs/week &middot; Amsterdam / Rotterdam / Zwolle</p>
+                    <div class="detail-body">
+                        <p>Join our clinics in Amsterdam, Rotterdam, and Zwolle and specialise in tattoo removal using the most advanced pico laser, the PicoWay. You will work independently with plenty of client contact in a young, international, and growing team where development, quality, and authenticity come first.</p>
+                        <br>
+                        <p>We require a completed bachelor's degree in skin therapy, proficiency in Dutch and English, and availability for at least two weekend days per month and one evening per week. In return we offer a 12-month contract with prospect of a permanent position, a paid 4-week internal training period, NVH reimbursement, and the chance to grow with a company expanding across Europe and beyond.</p>
+                    </div>
+                    <a class="apply-btn" href="mailto:hr@undo.nl?subject=Application%20%E2%80%94%20Skin%20Therapist%20Netherlands">Apply by Email</a>
+                </div>
+
+                <div class="job-panel" data-index="3">
+                    <h2 class="detail-title">Clinician — Denmark</h2>
+                    <p class="detail-meta">20&ndash;40 hrs/week &middot; Denmark</p>
+                    <div class="detail-body">
+                        <p>As our first Clinician and Clinic Manager in Denmark, you will both deliver best-in-class tattoo removal treatments on the PicoWay laser and actively shape the launch of our first Danish clinic. Think client follow-ups, social media and influencer partnerships, and your own initiatives to grow the business — we are up for it.</p>
+                        <br>
+                        <p>We are looking for a minimum of 5 years' experience as a nurse, beautician, or clinician, a customer-first and commercial mindset, and fluency in Danish and English. You'll join a 40-person team scaling from 18 to 60+ clinics by 2029 as Rethink and Undo unite under one brand across Europe.</p>
+                    </div>
+                    <a class="apply-btn" href="mailto:hr@undo.nl?subject=Application%20%E2%80%94%20Clinician%20Denmark">Apply by Email</a>
                 </div>
 
             </div>
