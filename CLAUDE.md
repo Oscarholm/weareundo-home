@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Placeholder/coming-soon site for We Are Undo. A single-page static HTML site with no build system, no JavaScript, and no dependencies.
+Marketing site for We Are Undo. The homepage (`index.html`) is a static "About Us" page. There is no build system and no framework — plain HTML, embedded CSS, and a small amount of vanilla JavaScript.
 
 ## Running Locally
 
@@ -14,18 +14,24 @@ Open `index.html` directly in a browser, or serve it with any HTTP server:
 python -m http.server 8000
 ```
 
-The site uses Typekit (Adobe Fonts) for the Futura PT typeface, so an internet connection is needed for fonts to load.
+Fonts (Hanken Grotesk + a serif) are self-hosted in `assets/`, so no internet connection is required.
 
 ## Architecture
 
-Single file: `index.html` contains all markup and embedded CSS. There is no separate stylesheet, no JavaScript, and no build step.
+`index.html` contains all markup and embedded CSS. Referenced assets (fonts and images) live in `assets/` as individual files.
 
-- Layout: CSS Flexbox, full viewport height (`dvh`), centered content
-- Typography: Futura PT via Typekit; fluid sizing with `clamp()`
-- Colors: `#f1ebe5` background, `#3c3c3c` text, `#0000ff` CTA
-- CTA button links to `mailto:gustav@weareundo.com`
-- SVG asset (`WAU26_STOREFRONT SYSTEM_Facades Outline.svg`) is a 1920×1080 architectural line drawing referenced inline
+- The page was produced by de-bundling a self-contained "standalone" export (a single ~29 MB file that stored every asset as base64 and unpacked them client-side via JS). It was converted to a lean static page: assets extracted to `assets/`, referenced normally, no client-side unpacking.
+- The only JavaScript is a small inline scroll-reveal enhancement (IntersectionObserver adds an `.in` class to `.reveal` elements). It is progressive enhancement, not a framework.
+- Fonts are self-hosted `.woff2` files in `assets/` via `@font-face`; no external font CDN.
+- Photos in `assets/` are sized/compressed for web. The two hero JPEGs were resized to 2560px (longest side) at quality ~82. Keep new imagery similarly sized — avoid committing multi-megapixel originals.
+- Colors: `#f3ece4` background, dark ink text.
+- Contact CTA links to `mailto:gustav@weareundo.com`.
+- The **Press Release** button downloads `undo-naama-press-release-202607.pdf` (root) via a `download` attribute.
+
+### Other pages
+
+`careers.html` and `finance_operations.html` are standalone pages retained from earlier work. The homepage does not link to them, but they are still served if visited directly. `board/` is a separate password-protected section (see `README.md`).
 
 ## Deployment
 
-Deploy by uploading `index.html` and the SVG file to any static host (Netlify, Vercel, GitHub Pages, etc.). No environment variables or build process required.
+Deploy by uploading the static files to any static host (Netlify, Vercel, GitHub Pages, etc.). Include `index.html`, the `assets/` folder, the press-release PDF, `favicon.svg`, and any other pages you want reachable. `_redirects` holds Netlify redirect rules. No environment variables or build process required.
