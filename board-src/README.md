@@ -14,7 +14,10 @@ Password-protected board materials. Source lives in `/board-src/`; encrypted out
    ```
 
    It first renders `board-src/` → `.board-staged/` (injecting Detailed Reads), then prompts for the board password and encrypts the staged tree into `/board/`. Same password for all pages — change it by deleting `.staticrypt.json` and re-running with a new password.
-5. `git add board/ board-src/ .staticrypt.json && git commit && git push`. Cloudflare Pages deploys automatically.
+5. Verify before you ship: `node board-src/verify.mjs <yyyymm>`. It encrypts the pack with a throwaway password, unlocks it in headless Chrome and reports slides, broken images, fonts and CSP violations. No board password needed.
+6. `git add board/ board-src/ .staticrypt.json && git commit && git push`. Cloudflare Pages deploys automatically.
+
+   **`build.sh` must be run in a real terminal** — it prompts for the password with `read -s`, which needs a TTY. Piped or run from a tool without one, `read` hits EOF and `set -e` aborts the script right after the render step, leaving `/board/` untouched.
 
 ## Detailed Reads
 
